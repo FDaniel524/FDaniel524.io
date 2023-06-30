@@ -1,0 +1,930 @@
+*
+{
+    box-sizing: border-box;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+body
+{
+    font-family: 'Electrolize', sans-serif;
+    
+    background-color: #F9F9F9;
+}
+
+html
+{
+    font-size: 30px;
+}
+
+audio
+{
+    display: none;
+}
+
+.intro
+{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0,0,0);
+    font-size: 0.9rem;
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.8s linear;
+}
+
+.laterales
+{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    
+    border: cyan solid;
+    border-style: double;
+    border-radius: 100%;
+    
+    width: 30%;
+    height: 30%;
+    transform: translate(-50%,-50%);
+    animation: ondas 3s ease-out infinite;
+}
+
+.laterales2
+{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    
+    border: cyan solid;
+    border-style: double;
+    border-radius: 100%;
+    
+    width: 30%;
+    height: 30%;
+    transform: translate(-50%,-50%);
+    animation: ondas 0.25s ease-out infinite;
+}
+
+
+@keyframes ondas
+{
+    0%
+    {
+        border: cyan solid;
+        width: 25%;
+        height: 25%;
+        opacity: 0;
+    }
+    
+    20%
+    {
+        box-shadow: 0 0 40px #9ecaed;
+        opacity: 1;
+    }
+    
+    100%
+    {
+        border: blue solid;
+        width: 110%;
+        height: 200%;
+        opacity: 0;
+        
+        box-shadow: 0 0 10px #9ecaed;
+    }
+}
+
+.cont-intro
+{
+    width: 25%;
+    height: 150px;
+    
+    margin: auto auto 10px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.intro-sup, .intro-inf
+{
+    margin: auto;
+    width: 100%;
+    height: 49%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.intro-sup div, .intro-inf div
+{
+    width: 24%;
+    height: 100%;
+    border: 10px cyan outset;
+}
+
+#HU, #OD, #AD
+{
+    border-top-color: transparent;
+    animation: entrada 3s ease 1;
+}
+
+#HD, #OU, #AD
+{
+    border-bottom-color: transparent;
+    animation: entrada 3s linear;
+}
+
+#LU
+{
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    animation: entrada 3s linear;
+}
+
+#LD
+{
+    border-top-color: transparent;
+    border-right-color: transparent;
+    animation: entrada 3s linear;
+}
+
+#AU
+{
+    animation: entrada 3s linear;
+}
+
+@keyframes entrada
+{
+    0%
+    {
+        border-color: white;
+        opacity: 0.2;
+    }
+    
+    20%
+    {
+        border-color: red;
+        opacity: 1;
+    }
+    
+    40%
+    {
+        border-color: green;
+        opacity: 0.2;
+    }
+    
+    60%
+    {
+        border-color: pink;
+        opacity: 1;
+    }
+    
+    80%
+    {
+        border-color: yellow;
+        opacity: 0.2;
+    }
+    
+    100%
+    {
+        border-color: cyan;
+    }
+}
+
+.visita
+{
+    margin: 0 auto auto auto;
+    width: 30%;
+    color: white;
+    text-align: center;
+    font-size: 0.6rem;
+}
+
+h1 #GB
+{
+    animation: console 0.8s ease 0s infinite;
+}
+
+.parpadeo
+{
+    animation: console 0.3s ease 0s infinite;
+}
+
+@keyframes console
+{
+    0%
+    {
+        color: white;
+        opacity: 0;
+    }
+    
+    50%
+    {
+        color: white;
+        opacity: 1;
+    }
+    
+    100%
+    {
+        color: white;
+        opacity: 0;
+    }
+}
+
+.intro p
+{
+    color: white;
+    font-size: 20px;
+    display: none;
+    transition: all 2s linear;
+    cursor: pointer;
+}
+/*PAGINA DE PRESENTACION*/
+#titulo-cab
+{
+    width: 100vw;
+    height: 60px;
+    display: flex;
+    border: none;
+    z-index: 6;
+    
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background: #023764;
+    color: white;
+    margin: 0;
+    font-size: calc(0.35rem + 2vw);
+    
+    position: absolute;
+    transition: all 0.3s linear;
+}
+
+#cabecera
+{
+    display: flex;
+    margin: auto;
+}
+/*DROPDOWN*/
+#btndm
+{
+    display: flex;
+    flex-direction: column;
+    width: 1.7rem;
+    height: 1.7rem;
+    border: 0;
+    background: transparent;
+    justify-content: center;
+    gap: 0.4rem;
+    z-index: 7;
+    position: absolute;
+    cursor: pointer;
+}
+
+#btndm div
+{
+    background: white;
+    height: 2px;
+    width: 100%;
+    border-radius: 5px;
+    transition: all 0.5s;
+    transform-origin: left;
+}
+
+#btndm:hover div:first-child
+{
+    transform: rotate(45deg);
+    width: 100%;
+}
+
+#btndm:hover div:nth-child(2)
+{
+    opacity: 0;
+}
+
+#btndm:hover div:last-child
+{
+    transform: rotate(-45deg);
+    width: 100%;
+}
+
+.dropdown-menu-cerrado
+{
+    margin-left: 0;
+    height: 100%;
+    width: 0px;
+    
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 1;
+    font-size: 0px;
+    transition: all 0.5s ease 0.2s;
+}
+
+.dropdown-menu-abierto
+{
+    margin-left: 0;
+    height: 100vh;
+    width: 250px;
+    
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 5;
+    
+    color: white;
+    font-size: 24px;
+    overflow: hidden;
+    background-color: black;
+    /*transition: all 0.3s linear;*/
+    animation: abrir 0.35s linear 1;
+}
+
+@keyframes abrir
+{
+    from
+    {
+        width: 0px;
+    }
+    to
+    {
+        width: 250px;
+    }
+}
+
+.dropdown-menu-abierto div
+{
+    width: 100%;
+    display: flex;
+    margin: 10px 0;
+    cursor: pointer;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+.dropdown-menu-cerrado div
+{
+    margin-left: -1000px;
+    z-index: 0;
+}
+
+#drme .chap:hover
+{
+    background: #023764;
+}
+
+.dropdown-menu-abierto .idioma
+{
+    width: 100%;
+    height: 50px;
+    justify-content: end;
+    position: absolute;
+    top: 85%;
+}
+
+.idioma img
+{
+    width: 20%;
+    height: auto;
+    margin: auto 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.idioma img:hover
+{
+    transform: translate(0,-10px);
+}
+
+.cont-principal
+{
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    display: flex;
+    
+    padding: 4% 4% 20px 2%;
+    z-index: 4;
+    color: black;
+    transition: all 0.3s linear;
+    overflow: hidden;
+}
+
+#ap2, #ap3, #ap4, #ap5
+{
+    display: none;
+    width: 100%;
+    overflow: hidden;
+}
+
+#ap1
+{
+    font-size: calc(0.3rem + 1vw);
+}
+
+#ap1 img
+{
+    margin-top: 40px;
+    border-radius: 10px;
+}
+
+#ap2
+{
+    width: 100%;
+    margin-top: 30px;
+    justify-content: space-between;
+    padding: auto;
+    flex-direction: column;
+}
+
+#ap2 .imgcont
+{
+    display: flex;
+    flex-direction: row;
+}
+
+#ap2 .cont2
+{
+    margin: 0 auto auto auto;
+    width: 45%;
+    max-height: 500px;
+    border: 1px #902626 solid;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    display: inline-block;
+    border-radius: 10px;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.apartados .lenguajes
+{
+    width: 100%;
+    padding: 0;
+}
+
+.cont2 h5
+{
+    margin: 0 auto 20px auto;
+}
+
+.cont2 img
+{
+    width: 30%;
+    height: auto;
+    margin: auto;
+}
+
+#ap2 p
+{
+    font-size: calc(0.3rem + 1vw);
+    text-align: center;
+}
+
+#ap3
+{
+    justify-content: space-between;
+    font-size: 0.6rem;
+}
+
+#ap3 .paginas
+{
+    display: flex;
+    flex-direction: row;
+    width: 100%,
+    margin: auto 0;
+    justify-content: space-around;
+}
+
+.paginas div
+{
+    width: 22%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.paginas div img
+{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: auto 0;
+    transition: all 0.3s ease;
+}
+
+.paginas div img:hover
+{
+    transform: translate(0px,-10px);
+    box-shadow: 0 0 40px #027D29;
+}
+
+.notaproy
+{
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+embed
+{
+    margin-top: 20px;
+    height: 78vh;
+}
+
+#ap5
+{
+    width: 100%;
+}
+
+.agrad
+{
+    text-align: center;
+}
+
+.redes-padre
+{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.redes-padre .redes
+{
+    width: 100%;
+    display: grid;
+    text-align: center;
+}
+
+.redes img
+{
+    margin: 0 auto;
+    width: 40%;
+    height: auto;
+}
+
+.redes #red1
+{
+    animation: flote 2.8s linear infinite;
+}
+
+.redes #red2
+{
+    animation: flote 3s linear infinite;
+}
+
+.redes #red3
+{
+    animation: flote 3.2s linear infinite;
+}
+/*
+#red1
+{
+    box-shadow: 0 0 40px #3531CB;
+}
+
+#red2
+{
+    box-shadow: 0 0 40px #610780;
+}
+
+#red3
+{
+    box-shadow: 0 0 40px #078028;
+}
+*/
+@keyframes flote
+{
+    0%
+    {
+        transform: translate(0,0px);
+    }
+    
+    25%
+    {
+        transform: translate(0,-20px);
+    }
+    
+    50%
+    {
+        transform: translate(0,0px);
+    }
+    
+    75%
+    {
+        transform: translate(0,20px);
+    }
+    
+    100%
+    {
+        transform: translate(0,0px);
+    }
+}
+
+.redes h6
+{
+    margin: 20px auto auto auto;
+}
+
+.redes p
+{
+    opacity: 0;
+    transition: all 0.6s ease;
+    text-align: center;
+    font-size: calc(0.3rem + 1vw);
+}
+
+#gmail:hover > p
+{
+    opacity: 1;
+}
+
+#github:hover > p
+{
+    opacity: 1;
+}
+
+#whats:hover > p
+{
+    opacity: 1;
+}
+
+#gmail:hover #red1, #github:hover #red2, #whats:hover #red3
+{
+    animation: tamanio 1s ease;
+}
+
+@keyframes tamanio
+{
+    0%
+    {
+        opacity: 0;
+        transform: scale(0);
+    }
+    
+    100%
+    {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media only screen and (min-width: 761px) and (max-width: 960px)
+{
+    .dropdown-menu-cerrado
+    {
+        margin-left: 0;
+        height: 0px;
+        width: 0px;
+        flex-direction: column;
+        position: absolute;
+        z-index: 2;
+        font-size: 0px;
+        transition: all 0.5s ease 0.2s;
+    }
+    
+    .dropdown-menu-abierto
+    {
+        top: 20px;
+        height: 350px;
+        width: 100vw;
+        animation: abrirvert 0.35s linear 1;
+        font-size: 0.5rem;
+    }
+    
+    .dropdown-menu-abierto div
+    {
+        margin: 5px 0;
+    }
+    
+    @keyframes abrirvert
+    {
+        from
+        {
+            height: 0px;
+        }
+        to
+        {
+            height: 300px;
+        }
+    }
+    
+    .dropdown-menu-abierto .idioma
+    {
+        width: 100%;
+        height: 50px;
+        justify-content: end;
+        position: absolute;
+        top: 75%;
+    }
+    
+    .idioma img
+    {
+        width: 32px;
+        height: auto;
+        margin: auto 5px;
+    }
+    
+    main .cont-principal
+    {
+        padding: 9% 2% 20px 2%;
+    }
+    
+    #ap1
+    {
+        text-align: center;
+    }
+    
+    #ap2, #ap3, #ap4, #ap5
+    {
+        margin-top: 5vh;
+    }
+    
+    #ap2
+    {
+        flex-direction: column;
+    }
+    
+    #ap2 .imgcont
+    {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #ap2 .cont2
+    {
+        width:90%;
+    }
+    
+    #ap3 .paginas
+    {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+        width: 100%;
+        margin: auto 0;
+    }
+    
+    .paginas div
+    {
+        width: 85%;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .paginas div img
+    {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        cursor: pointer;
+        margin: auto 0;
+        transition: all 0.3s ease;
+    }
+    
+    .agrad
+    {
+        font-size: 0.6rem;
+        text-align: center;
+    }
+    
+    .redes p
+    {
+        font-size: 0.45rem;
+    }
+}
+
+@media only screen and (min-width: 200px) and (max-width: 760px)
+{
+    .dropdown-menu-cerrado
+    {
+        margin-left: 0;
+        height: 0px;
+        width: 0px;
+        flex-direction: column;
+        position: absolute;
+        z-index: 2;
+        font-size: 0px;
+        transition: all 0.5s ease 0.2s;
+    }
+    
+    .dropdown-menu-abierto
+    {
+        top: 20px;
+        height: 350px;
+        width: 100vw;
+        animation: abrirvert 0.35s linear 1;
+        font-size: 0.5rem;
+    }
+    
+    .dropdown-menu-abierto div
+    {
+        margin: 5px 0;
+    }
+    
+    @keyframes abrirvert
+    {
+        from
+        {
+            height: 0px;
+        }
+        to
+        {
+            height: 300px;
+        }
+    }
+    
+    .dropdown-menu-abierto .idioma
+    {
+        width: 100%;
+        height: 50px;
+        justify-content: end;
+        position: absolute;
+        top: 75%;
+    }
+    
+    .idioma img
+    {
+        width: 32px;
+        height: auto;
+        margin: auto 5px;
+    }
+    
+    main .cont-principal
+    {
+        padding: 9% 2% 20px 2%;
+    }
+    
+    #ap1
+    {
+        text-align: center;
+    }
+    
+    #ap2, #ap3, #ap4, #ap5
+    {
+        margin-top: 5vh;
+    }
+    
+    #ap2
+    {
+        flex-direction: column;
+    }
+    
+    #ap2 .imgcont
+    {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #ap2 .cont2
+    {
+        width:90%;
+    }
+    
+    #ap3 .paginas
+    {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+        width: 100%;
+        margin: auto 0;
+    }
+    
+    .paginas div
+    {
+        width: 85%;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .paginas div img
+    {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        cursor: pointer;
+        margin: auto 0;
+        transition: all 0.3s ease;
+    }
+    
+    .agrad
+    {
+        font-size: 0.6rem;
+        text-align: center;
+    }
+    
+    .redes p
+    {
+        font-size: 0.45rem;
+    }
+}
